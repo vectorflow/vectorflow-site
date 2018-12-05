@@ -9,6 +9,7 @@ phases:
  build:
    commands:
      - aws s3 sync --delete . "s3://vectorflow.in"
+     - aws cloudfront create-invalidation --distribution-id "EA5QDDN47RJLZ" --paths "/*"
  post_build:
    commands:
      - echo "post_build step"
